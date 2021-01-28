@@ -11,6 +11,12 @@
 		5630BD5A25C04CD4001499A7 /* MarketPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5630BD5925C04CD4001499A7 /* MarketPage.swift */; };
 		56E4140325C16F4800D392A0 /* MarketItemDecodeMockDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4140225C16F4800D392A0 /* MarketItemDecodeMockDataTests.swift */; };
 		56E4141225C17B0800D392A0 /* MarketPageDecodeMockDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4141125C17B0800D392A0 /* MarketPageDecodeMockDataTests.swift */; };
+		8B51E9A425C336C9006425CD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51E9A225C336C9006425CD /* ListViewController.swift */; };
+		8B51E9A525C336C9006425CD /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B51E9A325C336C9006425CD /* ListViewController.xib */; };
+		8B51E9AC25C336FC006425CD /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51E9AA25C336FC006425CD /* ListViewCell.swift */; };
+		8B51E9AD25C336FC006425CD /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B51E9AB25C336FC006425CD /* ListViewCell.xib */; };
+		8B82179625C2C2BB0069D361 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82179425C2C2BB0069D361 /* GridViewController.swift */; };
+		8B82179725C2C2BB0069D361 /* GridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B82179525C2C2BB0069D361 /* GridViewController.xib */; };
 		C70FB0FB25BEF61C00C9924E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FA25BEF61C00C9924E /* AppDelegate.swift */; };
 		C70FB0FD25BEF61C00C9924E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FC25BEF61C00C9924E /* SceneDelegate.swift */; };
 		C70FB0FF25BEF61C00C9924E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FE25BEF61C00C9924E /* ViewController.swift */; };
@@ -36,6 +42,12 @@
 		56E413F225C1484200D392A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E4140225C16F4800D392A0 /* MarketItemDecodeMockDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemDecodeMockDataTests.swift; sourceTree = "<group>"; };
 		56E4141125C17B0800D392A0 /* MarketPageDecodeMockDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPageDecodeMockDataTests.swift; sourceTree = "<group>"; };
+		8B51E9A225C336C9006425CD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8B51E9A325C336C9006425CD /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		8B51E9AA25C336FC006425CD /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		8B51E9AB25C336FC006425CD /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		8B82179425C2C2BB0069D361 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		8B82179525C2C2BB0069D361 /* GridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewController.xib; sourceTree = "<group>"; };
 		C70FB0F725BEF61C00C9924E /* OpenMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70FB0FA25BEF61C00C9924E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70FB0FC25BEF61C00C9924E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +95,19 @@
 			path = OpenMarketTests;
 			sourceTree = "<group>";
 		};
+		8B82179A25C2C2CD0069D361 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8B51E9A225C336C9006425CD /* ListViewController.swift */,
+				8B51E9A325C336C9006425CD /* ListViewController.xib */,
+				8B51E9AA25C336FC006425CD /* ListViewCell.swift */,
+				8B51E9AB25C336FC006425CD /* ListViewCell.xib */,
+				8B82179425C2C2BB0069D361 /* GridViewController.swift */,
+				8B82179525C2C2BB0069D361 /* GridViewController.xib */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C70FB0EE25BEF61C00C9924E = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +133,7 @@
 				C70FB0FA25BEF61C00C9924E /* AppDelegate.swift */,
 				C70FB0FC25BEF61C00C9924E /* SceneDelegate.swift */,
 				C70FB0FE25BEF61C00C9924E /* ViewController.swift */,
+				8B82179A25C2C2CD0069D361 /* New Group */,
 				C70FB10025BEF61C00C9924E /* Main.storyboard */,
 				C70FB10325BEF61D00C9924E /* Assets.xcassets */,
 				C70FB10525BEF61D00C9924E /* LaunchScreen.storyboard */,
@@ -203,7 +229,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B82179725C2C2BB0069D361 /* GridViewController.xib in Resources */,
 				C70FB10725BEF61D00C9924E /* LaunchScreen.storyboard in Resources */,
+				8B51E9AD25C336FC006425CD /* ListViewCell.xib in Resources */,
+				8B51E9A525C336C9006425CD /* ListViewController.xib in Resources */,
 				C70FB10425BEF61D00C9924E /* Assets.xcassets in Resources */,
 				C70FB10225BEF61C00C9924E /* Main.storyboard in Resources */,
 			);
@@ -227,9 +256,12 @@
 			files = (
 				C70FB0FF25BEF61C00C9924E /* ViewController.swift in Sources */,
 				5630BD5A25C04CD4001499A7 /* MarketPage.swift in Sources */,
+				8B82179625C2C2BB0069D361 /* GridViewController.swift in Sources */,
 				C70FB0FB25BEF61C00C9924E /* AppDelegate.swift in Sources */,
+				8B51E9AC25C336FC006425CD /* ListViewCell.swift in Sources */,
 				5630BD4C25BFFC3D001499A7 /* MarketItem.swift in Sources */,
 				C70FB0FD25BEF61C00C9924E /* SceneDelegate.swift in Sources */,
+				8B51E9A425C336C9006425CD /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
