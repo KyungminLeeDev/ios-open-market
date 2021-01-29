@@ -12,7 +12,6 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var listView: UIView!
     @IBOutlet weak var gridView: UIView!
-    var views: [UIView]!
 
     // MARK: - IBActions & Methods
 
