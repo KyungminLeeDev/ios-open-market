@@ -13,5 +13,4 @@ class GridViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }
