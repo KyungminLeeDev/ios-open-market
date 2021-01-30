@@ -15,7 +15,7 @@ class ListViewController: UIViewController {
     // MARK: - IBActions & Methods
     func registerXib() {
         let xib: UINib = UINib(nibName: "ListViewCell", bundle: nil)
-        tableView.register(xib, forCellReuseIdentifier: "itemCell")
+        tableView.register(xib, forCellReuseIdentifier: "itemListCell")
     }
 
     // MARK: - View lifecycle
@@ -43,7 +43,7 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ListViewCell else { return UITableViewCell() }
+        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemListCell") as? ListViewCell else { return UITableViewCell() }
         return cell
     }
 }
