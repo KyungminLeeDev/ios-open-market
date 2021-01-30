@@ -13,9 +13,11 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var itemStock: UILabel!
+    @IBOutlet weak var discountedItemPrice: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
