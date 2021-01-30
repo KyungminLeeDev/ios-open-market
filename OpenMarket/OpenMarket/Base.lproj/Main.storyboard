@@ -100,6 +100,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jcM-5A-JWE"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lec-WX-mXY" firstAttribute="leading" secondItem="Qns-UI-gge" secondAttribute="leading" id="OqE-Bk-jdG"/>
@@ -145,6 +146,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aMe-wg-h2E"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="ZX8-Fa-8SJ" secondAttribute="bottom" id="3aB-lm-5Jc"/>
@@ -153,6 +155,9 @@
                             <constraint firstItem="ZX8-Fa-8SJ" firstAttribute="top" secondItem="YqG-z3-Dv1" secondAttribute="topMargin" id="fMr-FJ-apr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ZX8-Fa-8SJ" id="7AK-4d-7g5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xy2-Zb-xUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,8 @@
 		8B51E9AD25C336FC006425CD /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B51E9AB25C336FC006425CD /* ListViewCell.xib */; };
 		8BEC462B25C4C3A7001E89D3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC462A25C4C3A7001E89D3 /* ListViewController.swift */; };
 		8BEC462F25C4C3AF001E89D3 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC462E25C4C3AF001E89D3 /* GridViewController.swift */; };
+		8BEC463625C4CD3C001E89D3 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC463425C4CD3C001E89D3 /* GridViewCell.swift */; };
+		8BEC463725C4CD3C001E89D3 /* GridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEC463525C4CD3C001E89D3 /* GridViewCell.xib */; };
 		C70FB0FB25BEF61C00C9924E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FA25BEF61C00C9924E /* AppDelegate.swift */; };
 		C70FB0FD25BEF61C00C9924E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FC25BEF61C00C9924E /* SceneDelegate.swift */; };
 		C70FB0FF25BEF61C00C9924E /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FB0FE25BEF61C00C9924E /* ContainerViewController.swift */; };
@@ -44,6 +46,8 @@
 		8B51E9AB25C336FC006425CD /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
 		8BEC462A25C4C3A7001E89D3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8BEC462E25C4C3AF001E89D3 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		8BEC463425C4CD3C001E89D3 /* GridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		8BEC463525C4CD3C001E89D3 /* GridViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewCell.xib; sourceTree = "<group>"; };
 		C70FB0F725BEF61C00C9924E /* OpenMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70FB0FA25BEF61C00C9924E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70FB0FC25BEF61C00C9924E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				8B51E9AA25C336FC006425CD /* ListViewCell.swift */,
 				8B51E9AB25C336FC006425CD /* ListViewCell.xib */,
+				8BEC463425C4CD3C001E89D3 /* GridViewCell.swift */,
+				8BEC463525C4CD3C001E89D3 /* GridViewCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70FB10725BEF61D00C9924E /* LaunchScreen.storyboard in Resources */,
+				8BEC463725C4CD3C001E89D3 /* GridViewCell.xib in Resources */,
 				8B51E9AD25C336FC006425CD /* ListViewCell.xib in Resources */,
 				C70FB10425BEF61D00C9924E /* Assets.xcassets in Resources */,
 				C70FB10225BEF61C00C9924E /* Main.storyboard in Resources */,
@@ -254,6 +261,7 @@
 				5630BD4C25BFFC3D001499A7 /* MarketItem.swift in Sources */,
 				C70FB0FD25BEF61C00C9924E /* SceneDelegate.swift in Sources */,
 				8BEC462B25C4C3A7001E89D3 /* ListViewController.swift in Sources */,
+				8BEC463625C4CD3C001E89D3 /* GridViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
