@@ -9,21 +9,33 @@ import UIKit
 
 class GridViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    func registerXib() {
+        let xib: UINib = UINib(nibName: "GridViewCell", bundle: nil)
+        collectionView.register(xib, forCellWithReuseIdentifier: "itemGridCell")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        registerXib()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+extension GridViewController: UICollectionViewDelegate {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension GridViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
     }
-    */
 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemGridCell", for: indexPath) as? GridViewCell else { return UICollectionViewCell() }
+        return cell
+    }
 }
