@@ -11,6 +11,7 @@ class ListViewController: UIViewController {
 
     // MARK: - IBOutlets & Properties
     @IBOutlet weak var tableView: UITableView!
+    var referenceCount: Int = 0
 
     // MARK: - IBActions & Methods
     func registerXib() {
@@ -25,6 +26,11 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
 
         registerXib()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Data load...
     }
 }
 
@@ -43,7 +49,28 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemListCell") as? ListViewCell else { return UITableViewCell() }
-        return cell
+        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemListCell") else {
+            return UITableViewCell()
+        }
+        guard let listCell: ListViewCell = cell as? ListViewCell else { return cell }
+
+        OpenMarketAPIClient().getMarketPage(pageNumber: 1) { result in
+            switch result {
+            case .success(let marketPage):
+                if self.referenceCount != marketPage.marketItems.count - 1 {
+                    DispatchQueue.main.async {
+                        listCell.itemName.text = marketPage.marketItems[self.referenceCount].title
+                        listCell.itemPrice.text = marketPage.marketItems[self.referenceCount].priceWithCurrency
+//                        listCell.itemStock.text = String(marketPage.marketItems[self.referenceCount].stock!)
+//                        listCell.discountedItemPrice.text = String(marketPage.marketItems[self.referenceCount].discountedPrice!)
+                        self.referenceCount += 1
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+        return listCell
     }
 }
