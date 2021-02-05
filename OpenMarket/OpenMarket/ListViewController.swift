@@ -11,7 +11,8 @@ class ListViewController: UIViewController {
 
     // MARK: - IBOutlets & Properties
     @IBOutlet weak var tableView: UITableView!
-    var referenceCount: Int = 0
+    var marketPage: MarketPage?
+    var itemCount: Int?
 
     // MARK: - IBActions & Methods
     func registerXib() {
@@ -28,9 +29,22 @@ class ListViewController: UIViewController {
         registerXib()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Data load...
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        OpenMarketAPIClient().getMarketPage(pageNumber: 1) { result in
+            switch result {
+            case .success(let marketPage):
+                self.marketPage = marketPage
+                self.itemCount = marketPage.marketItems.count
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
 }
 
@@ -44,33 +58,52 @@ extension ListViewController: UITableViewDelegate {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 데이터를 받아오기 전 임시적인 값입니다.
-        return 20
+        if let marketPage = self.marketPage {
+            return marketPage.marketItems.count
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "itemListCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemListCell") as? ListViewCell else {
             return UITableViewCell()
         }
-        guard let listCell: ListViewCell = cell as? ListViewCell else { return cell }
-
-        OpenMarketAPIClient().getMarketPage(pageNumber: 1) { result in
-            switch result {
-            case .success(let marketPage):
-                if self.referenceCount != marketPage.marketItems.count - 1 {
-                    DispatchQueue.main.async {
-                        listCell.itemName.text = marketPage.marketItems[self.referenceCount].title
-                        listCell.itemPrice.text = marketPage.marketItems[self.referenceCount].priceWithCurrency
-//                        listCell.itemStock.text = String(marketPage.marketItems[self.referenceCount].stock!)
-//                        listCell.discountedItemPrice.text = String(marketPage.marketItems[self.referenceCount].discountedPrice!)
-                        self.referenceCount += 1
+        guard let marketPage = self.marketPage else {
+            print("not loaded MarketPage")
+            return UITableViewCell()
+        }
+        let item = marketPage.marketItems[indexPath.row]
+        cell.itemName.text = item.title
+        cell.itemStock.text = "\(item.stock ?? -1)"
+        cell.itemPrice.text = item.priceWithCurrency
+        if let discountedPrice = item.discountedPrice {
+            cell.discountedItemPrice.text = "\(discountedPrice)"
+        } else {
+            cell.discountedItemPrice.text = ""
+        }
+        cell.itemImage.image = nil // 이미지 초기화
+        
+        DispatchQueue.global().async {
+            
+            guard let thumbnail = item.thumbnails?.first, let thumbnailURL = URL(string: thumbnail) else {
+                return
+            }
+            guard let thumbnailData = try? Data(contentsOf: thumbnailURL) else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let cellIndexPath = tableView.indexPath(for: cell) {
+                    if cellIndexPath.row == indexPath.row {
+                        cell.itemImage.image = UIImage(data: thumbnailData)
+                        cell.setNeedsLayout()
+                        cell.layoutIfNeeded()
                     }
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
-
-        return listCell
+        
+        return cell
     }
 }
