@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemListCell" rowHeight="80" id="KGk-i7-Jjw" customClass="ListViewCell" customModule="OpenMarket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-1V-feX">
+                        <rect key="frame" x="18" y="22.5" width="50" height="35.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="N2S-ke-Cc9"/>
+                            <constraint firstAttribute="width" constant="50" id="tK2-ja-X1V"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mac mini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTf-Di-jFb">
+                        <rect key="frame" x="80" y="12" width="61.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잔여수량 : 148" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-Bp-Pfi">
+                        <rect key="frame" x="242" y="31" width="90" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 800" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV5-EO-S7i">
+                        <rect key="frame" x="80" y="50" width="63" height="18"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc8-Wi-DAK">
+                        <rect key="frame" x="151" y="50" width="62.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4HM-1V-feX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="5xn-bI-Yjk"/>
+                    <constraint firstAttribute="bottom" secondItem="iV5-EO-S7i" secondAttribute="bottom" constant="12" id="7Vq-as-vnd"/>
+                    <constraint firstItem="dTf-Di-jFb" firstAttribute="leading" secondItem="4HM-1V-feX" secondAttribute="trailing" constant="12" id="FuB-sQ-86U"/>
+                    <constraint firstAttribute="bottom" secondItem="mc8-Wi-DAK" secondAttribute="bottom" constant="12" id="Qcv-Ju-YZm"/>
+                    <constraint firstItem="4HM-1V-feX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vln-Dz-WgR"/>
+                    <constraint firstItem="iV5-EO-S7i" firstAttribute="leading" secondItem="4HM-1V-feX" secondAttribute="trailing" constant="12" id="W0d-7G-CZr"/>
+                    <constraint firstItem="kyn-Bp-Pfi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bPY-QO-M2g"/>
+                    <constraint firstItem="mc8-Wi-DAK" firstAttribute="leading" secondItem="iV5-EO-S7i" secondAttribute="trailing" constant="8" id="fIh-9t-5ce"/>
+                    <constraint firstAttribute="trailing" secondItem="kyn-Bp-Pfi" secondAttribute="trailing" constant="8" id="fOj-ac-aOl"/>
+                    <constraint firstItem="dTf-Di-jFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="lce-qC-Grh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="discountedItemPrice" destination="mc8-Wi-DAK" id="Kow-dx-ed2"/>
+                <outlet property="itemImage" destination="4HM-1V-feX" id="mYf-RP-jj3"/>
+                <outlet property="itemName" destination="dTf-Di-jFb" id="EFZ-b4-uMq"/>
+                <outlet property="itemPrice" destination="iV5-EO-S7i" id="5Ly-qL-uLB"/>
+                <outlet property="itemStock" destination="kyn-Bp-Pfi" id="LGD-4D-JuE"/>
+            </connections>
+            <point key="canvasLocation" x="174.63768115942031" y="112.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
