@@ -24,7 +24,18 @@ struct MarketItem: Decodable {
         numberFormatter.numberStyle = .decimal
         numberFormatter.currencyCode = self.currency
         guard let result: String = numberFormatter.string(for: price) else {
-            fatalError("Variable can't convert formatted string.")
+            print("Variable can't convert formatted string.")
+            return ""
+        }
+        return numberFormatter.currencyCode + " " + result
+    }
+    var discountedPriceWithCurrency: String {
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.currencyCode = self.currency
+        guard let result: String = numberFormatter.string(for: discountedPrice) else {
+            print("Variable can't convert formatted string.")
+            return ""
         }
         return numberFormatter.currencyCode + " " + result
     }
